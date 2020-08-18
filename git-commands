@@ -1,0 +1,198 @@
+angshuman@angshuman-ThinkPad-T480:~$ sudo apt-get install git
+[sudo] password for angshuman: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+git is already the newest version (1:2.25.1-1ubuntu3).
+git set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+angshuman@angshuman-ThinkPad-T480:~$ git config --global user.name "angshu_m"
+angshuman@angshuman-ThinkPad-T480:~$ git config --global user.email "angshuman_mazumdar@hotmail.com"
+angshuman@angshuman-ThinkPad-T480:~$ ls
+ Desktop     Downloads             Music          Pictures   snap        Videos
+ Documents  'Light bulb Moments'   Picture1.png   Public     Templates
+angshuman@angshuman-ThinkPad-T480:~$ cd desktop
+bash: cd: desktop: No such file or directory
+angshuman@angshuman-ThinkPad-T480:~$ cd Desktop
+angshuman@angshuman-ThinkPad-T480:~/Desktop$ ls
+ git-repo  'Light bulb Moments'  'Network Shared Folder'  'Project Files'
+angshuman@angshuman-ThinkPad-T480:~/Desktop$ cd git-repo
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ ls
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git init
+Initialized empty Git repository in /home/angshuman/Desktop/git-repo/.git/
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ ls -a
+.  ..  .git
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ touch index.html
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git add index.html
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   index.html
+
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git commit -m "create index.html"
+[master (root-commit) f10602d] create index.html
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git status
+On branch master
+nothing to commit, working tree clean
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git log
+commit f10602db970d223e847fcc2bb57669b675170c44 (HEAD -> master)
+Author: angshu_m <angshuman_mazumdar@hotmail.com>
+Date:   Fri Aug 14 01:48:10 2020 +0530
+
+    create index.html
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ touch app.js
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ touch stylesheet.css
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	app.js
+	stylesheet.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	app.js
+	stylesheet.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git add index.html app.js
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   app.js
+	modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	stylesheet.css
+
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git commit -m "add app logic"
+[master eb90b2b] add app logic
+ 2 files changed, 17 insertions(+)
+ create mode 100644 app.js
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git log
+commit eb90b2bb8b65a5a10f8149080c68699e6ff63eca (HEAD -> master)
+Author: angshu_m <angshuman_mazumdar@hotmail.com>
+Date:   Fri Aug 14 01:58:25 2020 +0530
+
+    add app logic
+
+commit f10602db970d223e847fcc2bb57669b675170c44
+Author: angshu_m <angshuman_mazumdar@hotmail.com>
+Date:   Fri Aug 14 01:48:10 2020 +0530
+
+    create index.html
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git add .
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   stylesheet.css
+
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git commit -m "add basic style"
+[master 61c4e6d] add basic style
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 stylesheet.css
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git log
+commit 61c4e6d871e1fca7e24d48c7e0d43068dfbdbdfc (HEAD -> master)
+Author: angshu_m <angshuman_mazumdar@hotmail.com>
+Date:   Fri Aug 14 01:59:39 2020 +0530
+
+    add basic style
+
+commit eb90b2bb8b65a5a10f8149080c68699e6ff63eca
+Author: angshu_m <angshuman_mazumdar@hotmail.com>
+Date:   Fri Aug 14 01:58:25 2020 +0530
+
+    add app logic
+
+commit f10602db970d223e847fcc2bb57669b675170c44
+Author: angshu_m <angshuman_mazumdar@hotmail.com>
+Date:   Fri Aug 14 01:48:10 2020 +0530
+
+    create index.html
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git add stylesheet.css
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git brach
+git: 'brach' is not a git command. See 'git --help'.
+
+The most similar command is
+	branch
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git branch
+* master
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git branch hometab
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git branch
+  hometab
+* master
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git checkout hometab
+Switched to branch 'hometab'
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git log
+commit 61c4e6d871e1fca7e24d48c7e0d43068dfbdbdfc (HEAD -> hometab, master)
+Author: angshu_m <angshuman_mazumdar@hotmail.com>
+Date:   Fri Aug 14 01:59:39 2020 +0530
+
+    add basic style
+
+commit eb90b2bb8b65a5a10f8149080c68699e6ff63eca
+Author: angshu_m <angshuman_mazumdar@hotmail.com>
+Date:   Fri Aug 14 01:58:25 2020 +0530
+
+    add app logic
+
+commit f10602db970d223e847fcc2bb57669b675170c44
+Author: angshu_m <angshuman_mazumdar@hotmail.com>
+Date:   Fri Aug 14 01:48:10 2020 +0530
+
+    create index.html
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git merge hometab
+Already up to date.
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ git log
+commit 61c4e6d871e1fca7e24d48c7e0d43068dfbdbdfc (HEAD -> hometab, master)
+Author: angshu_m <angshuman_mazumdar@hotmail.com>
+Date:   Fri Aug 14 01:59:39 2020 +0530
+
+    add basic style
+
+commit eb90b2bb8b65a5a10f8149080c68699e6ff63eca
+Author: angshu_m <angshuman_mazumdar@hotmail.com>
+Date:   Fri Aug 14 01:58:25 2020 +0530
+
+    add app logic
+
+commit f10602db970d223e847fcc2bb57669b675170c44
+Author: angshu_m <angshuman_mazumdar@hotmail.com>
+Date:   Fri Aug 14 01:48:10 2020 +0530
+
+    create index.html
+angshuman@angshuman-ThinkPad-T480:~/Desktop/git-repo$ 
+
